@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MediStats UI Preview</title>
+  <style>
+    :root { --bg:#f5f7fb; --card:#fff; --text:#1f2a37; --muted:#6b7280; --accent:#2563eb; --ok:#0f766e; }
+    body { margin:0; font-family: Inter, system-ui, Arial, sans-serif; background:var(--bg); color:var(--text); }
+    .wrap { max-width:1100px; margin:24px auto; padding:0 16px; }
+    .title { font-size:28px; font-weight:700; margin-bottom:4px; }
+    .sub { color:var(--muted); margin-bottom:20px; }
+    .card { background:var(--card); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,.08); padding:16px; margin-bottom:14px; }
+    .tabs { display:flex; gap:8px; margin:12px 0 18px; flex-wrap:wrap; }
+    .tab { background:#e5e7eb; color:#111827; padding:8px 12px; border-radius:999px; font-size:14px; }
+    .tab.active { background:var(--accent); color:#fff; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+    .kpi { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px; }
+    .kpi b { display:block; font-size:24px; }
+    table { width:100%; border-collapse:collapse; font-size:14px; }
+    th, td { border-bottom:1px solid #e5e7eb; padding:8px; text-align:left; }
+    .badge { color:#065f46; background:#d1fae5; padding:2px 8px; border-radius:999px; font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">🩺 MediStats: Medical Statistics App</div>
+    <div class="sub">Preview of the app layout for exploratory clinical data analysis.</div>
+
+    <div class="card">
+      <b>Upload CSV file</b>
+      <p class="sub">patients_demo.csv loaded successfully.</p>
+      <div class="grid">
+        <div class="kpi"><span>Rows</span><b>1,248</b></div>
+        <div class="kpi"><span>Columns</span><b>14</b></div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active">Descriptive</div>
+      <div class="tab">T-test</div>
+      <div class="tab">Chi-square</div>
+      <div class="tab">Logistic Regression</div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Descriptive Summary</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Variable</th><th>Type</th><th>Count</th><th>Missing %</th><th>Mean / Top</th><th>Std / Freq</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>age</td><td>numeric</td><td>1248</td><td>0.0</td><td>63.8</td><td>12.4</td></tr>
+          <tr><td>bmi</td><td>numeric</td><td>1202</td><td>3.7</td><td>28.1</td><td>4.9</td></tr>
+          <tr><td>sex</td><td>categorical</td><td>1248</td><td>0.0</td><td>female</td><td>681</td></tr>
+          <tr><td>mortality_30d</td><td>categorical</td><td>1248</td><td>0.0</td><td>no</td><td>1159 <span class="badge">binary</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

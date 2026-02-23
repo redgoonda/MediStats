@@ -34,3 +34,8 @@ streamlit run app.py
 ## Notes
 
 This app is for educational and exploratory analysis. It does **not** replace clinical statistical oversight.
+
+
+## UI preview
+
+Open `preview.html` in your browser for a quick static mock of the app layout.
